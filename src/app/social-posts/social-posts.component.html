@@ -1,0 +1,10 @@
+
+<form #formPosts  (ngSubmit)="onSubmit(formPosts)">
+<button>New Thought</button>
+</form>
+<div *ngFor="let post of post">
+<span>X</span>
+</div>
+<post-form></post-form>
+<post [post]="post"></post>
+
