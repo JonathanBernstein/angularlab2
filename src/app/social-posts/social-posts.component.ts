@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {postList} from "../postList";
+import { Post }  from '../postList';
 
 
 @Component({
@@ -8,23 +8,40 @@ import {postList} from "../postList";
   styleUrls: ['./social-posts.component.css']
 })
 export class SocialPostsComponent implements OnInit {
-post: postList[] = [
-  {title: "dfkdsfkdsjdfkjskjsdkj",
-   post:"dfjkdsjkjdfsakjldsjldkskldasdslkdfslkjdsfkjdsjkfhjdfshjddfsjsdkjdjskjdfdsjkdjsjkdsjkdshjdskjdsjhdfskhdfjkshdfkdsfhdfksdhdsjkfdhkjd"},
+  show: boolean = false;
+  posts: Post[] = [
 
-   {title: "lorem ipsum pipsum ",
-    post: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  }
-];
+      {  
+      title: "lorum ipsum",
+      post: "dsfjskjsdjkdskjdskjdsjkdkfjdskjdfsjdkkjdskjsdjkdskhfdkh"
+      }, 
+
+      {
+        title: "lorum ipsum pipsum",
+        post: "lorum quorum ipsum sigil kdjlskjflkdlkdsljkdslksdkldjfs"
+      }
+    
+    ];
+ 
+
+
 
   constructor() { }
 
-  onSubmit(): void{
-    
+  onSubmit(post: Post): void {
+    this.posts.unshift(post)
+    this.show = false;
+  }
+
+  toggleForm(): void {
+
+  this.show = !this.show;
   }
 
   ngOnInit() {
   }
+
+  
 
   
 }

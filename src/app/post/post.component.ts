@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
-import {postList} from "../postList";
+import { Component, OnInit, Input } from '@angular/core';
+import { Post } from '../postList';
 
 @Component({
   selector: 'post',
@@ -7,7 +7,8 @@ import {postList} from "../postList";
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-   @Input() post: postList[];
+  @Input() post: Post;
+
   constructor() { }
 
   ngOnInit() {

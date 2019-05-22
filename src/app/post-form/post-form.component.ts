@@ -7,9 +7,16 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./post-form.component.css']
 })
 export class PostFormComponent implements OnInit {
+  @Output() submitted = new EventEmitter<any>();
 
   constructor() { }
 
+  submitPost(form) {
+    this.submitted.emit({
+      title: form.value.title,
+      post: form.value.thought
+    });
+  }
   ngOnInit() {
   }
 

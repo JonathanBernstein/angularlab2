@@ -1,10 +1,12 @@
 
-<form #formPosts  (ngSubmit)="onSubmit(formPosts)">
-<button>New Thought</button>
-</form>
-<div *ngFor="let post of post">
-<span>X</span>
-</div>
-<post-form></post-form>
-<post [post]="post"></post>
-
+<main>
+<h1>My Thoughts</h1>
+<button (click)="toggleForm()">New Thought</button>
+<section>
+<post *ngFor="let post of posts; index as i" [post]="post"><span>X</span></post>
+</section>
+</main>
+<post-form 
+*ngIf="show"
+(submitted)="onSubmit($event)">
+</post-form>
